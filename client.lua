@@ -38,7 +38,7 @@ end)
 RegisterCommand("test", function(source, args)
     -- _GET_ALL_VEHICLES
     local pos = GetEntityCoords(GetPlayerPed(-1))
-    local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 150.0, 0, 16384)
+    local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 150.0, 0, 12294)
     if DoesEntityExist(vehicle) then
         --[[Get the vehicle you're in and it's coords and rotation
         local veh = GetVehiclePedIsIn(PlayerPedId())
