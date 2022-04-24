@@ -1,6 +1,6 @@
 RegisterCommand("tow", function(source, args)
 
-    -- load the model
+    --[[ load the model
     RequestModel(`tr2`)
 
     -- wait for the model to load
@@ -14,7 +14,9 @@ RegisterCommand("tow", function(source, args)
     -- Open the rear ramp so you can drive a vehicle on
     SetVehicleDoorOpen(truckTrailer, 5, false, false)
 
-    Wait(10000)
+    ]]
+
+    --Wait(10000)
 
     -- Get the vehicle you're in and it's coords and rotation
     local veh = GetVehiclePedIsIn(PlayerPedId())
@@ -30,4 +32,12 @@ RegisterCommand("tow", function(source, args)
     DetachEntity(veh, true, false)
 
     SetEntityAsNoLongerNeeded(truckTrailer)
+end)
+
+
+RegisterCommand("test", function(source, args)
+    -- _GET_ALL_VEHICLES
+    local retval, vehArray = GetAllVehicles()
+    print(retval)
+    print(vehArray)
 end)
