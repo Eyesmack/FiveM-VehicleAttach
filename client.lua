@@ -24,7 +24,7 @@ RegisterCommand("tow", function(source, args)
     -- Park the car where on the trailer you want it, you could make sure your vehicle is touching the trailer first using "IsEntityTouchingEntity"
     AttachVehicleOnToTrailer(veh, truckTrailer, 0.0, 0.0, 0.0, GetOffsetFromEntityGivenWorldCoords(truckTrailer, vehCoords), vehRotation, false)
 
-    Wait(5000)
+    Wait(10000)
 
     -- Do the following to detach the vehicle from the trailer
     DetachEntity(veh, true, false)
