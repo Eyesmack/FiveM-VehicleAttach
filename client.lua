@@ -40,6 +40,15 @@ RegisterCommand("test", function(source, args)
     local pos = GetEntityCoords(GetPlayerPed(-1))
     local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 10.0, 0, 70)
     if DoesEntityExist(vehicle) then
-        DeleteEntity(vehicle)
+        -- Get the vehicle you're in and it's coords and rotation
+        local veh = GetVehiclePedIsIn(PlayerPedId())
+        local vehCoords = GetEntityCoords(veh)
+        local vehRotation = GetEntityRotation(veh)
+
+        AttachVehicleOnToTrailer(veh, vehicle, 0.0, 0.0, 0.0, GetOffsetFromEntityGivenWorldCoords(vehicle, vehCoords), vehRotation, false)
+
+        Wait(10000)
+
+        DetachEntity(veh, true, false)
     end
 end)
