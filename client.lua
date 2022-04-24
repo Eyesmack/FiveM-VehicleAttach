@@ -38,7 +38,7 @@ end)
 RegisterCommand("test", function(source, args)
     -- _GET_ALL_VEHICLES
     local pos = GetEntityCoords(GetPlayerPed(-1))
-    local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 10, 0, 70)
+    local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 10.0, 0, 70)
     if DoesEntityExist(vehicle) then
         print("it exists")
     end
