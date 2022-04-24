@@ -1,4 +1,4 @@
-RegisterCommand('tow', function(source, args)
+RegisterCommand("tow", function(source, args)
     -- Request the model before creating it
     local truckTrailer = CreateVehicle(`tr2`, GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 8.0, 0.0), true)
 
