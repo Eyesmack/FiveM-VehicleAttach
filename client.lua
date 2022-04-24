@@ -51,9 +51,10 @@ RegisterCommand("test", function(source, args)
 
         DetachEntity(veh, true, false)]]
 
-        print(IsThisModelAPlane(vehicle))
+        
         local entityModelHash = GetEntityModel(vehicle)
         local displayName = GetDisplayNameFromVehicleModel(entityModelHash)
+        print(IsThisModelAPlane(entityModelHash))
         print(displayName)
     end
 end)
