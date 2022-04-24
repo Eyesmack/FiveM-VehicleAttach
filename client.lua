@@ -14,12 +14,12 @@ RegisterCommand("tow", function(source, args)
     -- Open the rear ramp so you can drive a vehicle on
     SetVehicleDoorOpen(truckTrailer, 5, false, false)
 
+    Wait(10000)
+
     -- Get the vehicle you're in and it's coords and rotation
     local veh = GetVehiclePedIsIn(PlayerPedId())
     local vehCoords = GetEntityCoords(veh)
     local vehRotation = GetEntityRotation(veh)
-
-    Wait(5000)
 
     -- Park the car where on the trailer you want it, you could make sure your vehicle is touching the trailer first using "IsEntityTouchingEntity"
     AttachVehicleOnToTrailer(veh, truckTrailer, 0.0, 0.0, 0.0, GetOffsetFromEntityGivenWorldCoords(truckTrailer, vehCoords), vehRotation, false)
