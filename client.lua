@@ -40,6 +40,6 @@ RegisterCommand("test", function(source, args)
     local pos = GetEntityCoords(GetPlayerPed(-1))
     local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 10.0, 0, 70)
     if DoesEntityExist(vehicle) then
-        print("it exists")
+        DeleteEntity(vehicle)
     end
 end)
