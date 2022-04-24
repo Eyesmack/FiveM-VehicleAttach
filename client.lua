@@ -38,7 +38,7 @@ end)
 RegisterCommand("test", function(source, args)
     -- _GET_ALL_VEHICLES
     local pos = GetEntityCoords(GetPlayerPed(-1))
-    local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 150.0, 0, 2175)
+    local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 150.0, 0, 16384)
     if DoesEntityExist(vehicle) then
         --[[Get the vehicle you're in and it's coords and rotation
         local veh = GetVehiclePedIsIn(PlayerPedId())
@@ -52,5 +52,8 @@ RegisterCommand("test", function(source, args)
         DetachEntity(veh, true, false)]]
 
         print(IsThisModelAPlane(vehicle))
+        local entityModelHash = GetEntityModel(vehicle)
+        local displayName = GetDisplayNameFromVehicleModel(entityModelHash)
+        print(displayName)
     end
 end)
