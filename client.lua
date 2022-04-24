@@ -36,8 +36,12 @@ end)
 
 
 RegisterCommand("test", function(source, args)
+    -- get the players pos
+    local playerPed = PlayerPedId() -- get the local player ped
+    local pos = GetEntityCoords(playerPed) -- get the pos of the local player ped
+
+
     -- _GET_ALL_VEHICLES
-    local retval, vehArray = GetAllVehicles()
+    local retval = GetClosestVehicle(pos.x, pos.y, pos.z, 100, 0, 70)
     print(retval)
-    print(vehArray)
 end)
