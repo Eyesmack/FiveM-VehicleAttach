@@ -1,4 +1,13 @@
 RegisterCommand("tow", function(source, args)
+
+    -- load the model
+    RequestModel(`tr2`)
+
+    -- wait for the model to load
+    while not HasModelLoaded(`tr2`) do
+        Wait(500)
+    end
+
     -- Request the model before creating it
     local truckTrailer = CreateVehicle(`tr2`, GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 8.0, 0.0), true)
 
@@ -19,4 +28,6 @@ RegisterCommand("tow", function(source, args)
 
     -- Do the following to detach the vehicle from the trailer
     DetachEntity(veh, true, false)
+
+    SetEntityAsNoLongerNeeded(truckTrailer)
 end)
